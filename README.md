@@ -5,4 +5,4 @@
 ### Data Structures
 
 * Singly Linked List
-  * Submission PR (https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/pull/1)
+  * [submission PR](https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/pull/1) 
