@@ -67,3 +67,25 @@ list.insert('Henlo, ');
 list.includes('Henlo, ');
 list.toString();
 console.log(util.inspect(list,{depth:10}));
+
+
+class moreLinks extends LinkedList {
+  append(value) {
+    if (this.head === null) {
+      this.head = new Node (value);
+      return;
+    }
+    let current = this.head
+    while (current.value === null) {
+     if (this.head === null) {
+       this.head = new Node (value);
+       current = current.next;
+      }
+      current.next = new Node (value);
+      return value;
+    }
+  }
+}
+
+let newList = new moreLinks();
+newList.append('#oof');
