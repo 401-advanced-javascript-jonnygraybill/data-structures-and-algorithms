@@ -7,6 +7,6 @@
 * Singly Linked List
   * [submission PR](https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/pull/1) 
 
-![Whiteboard-1](./assets/code challenges 6 - 1.jpg)
+![Whiteboard-1](./assets/code challenge 6 - 1.jpg)
 
 
