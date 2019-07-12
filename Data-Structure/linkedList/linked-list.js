@@ -1,16 +1,15 @@
 const util = require('util')
 
 class Node {
-  constructor(value) {
+  constructor(value, next = null) {
     this.value = value;
-    this.next = null;
+    this.next = next;
   }
 }
 
 class LinkedList {
   constructor() {
     this.head = null;
-    this.tail = null;
   }
 
   append(value) {
@@ -27,10 +26,7 @@ class LinkedList {
   }
 
   insert(value) {
-    let node = new Node(value);
-    node.next = this.head;
-    this.head = node;
-    return this.head;
+    this.head = new Node(value, this.head);
   }
 
   includes(value) {
@@ -54,20 +50,26 @@ class LinkedList {
       current = current.next;
     } return console.log(output);
   }
+
+  findK(k) {
+    let current = this.head;
+    let counter = 1;
+    while (current.next) {
+      current = current.next;
+      counter++;
+    }
+    let val = counter - k;
+    if ((val >= 0) && (val <= counter)) {
+      let newCurrent = this.head;
+      let result;
+      for (let i = 0; i < val; i++) {
+        result = newCurrent.value;
+        newCurrent = newCurrent.next;
+      }
+      return result;
+    }
+  }
 }
-
-let list = new LinkedList();
-list.append('I ');
-list.append('don\'t ');
-list.append('want ');
-list.append('to ');
-list.append('do ');
-list.append('this.');
-list.insert('Henlo, ');
-list.includes('Henlo, ');
-list.toString();
-console.log(util.inspect(list,{depth:10}));
-
 
 class moreLinks extends LinkedList {
   append(value) {
@@ -87,5 +89,4 @@ class moreLinks extends LinkedList {
   }
 }
 
-let newList = new moreLinks();
-newList.append('#oof');
+module.exports = LinkedList;
