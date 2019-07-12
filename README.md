@@ -14,7 +14,7 @@
 
 * Kth From End
 
-  * [submission PR]https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/pull/4)
+  * [submission PR](https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/pull/4)
   
   * ![alt text](https://github.com/401-advanced-javascript-jonnygraybill/data-structures-and-algorithms/blob/master/assets/kth-from-end.jpg)
  
