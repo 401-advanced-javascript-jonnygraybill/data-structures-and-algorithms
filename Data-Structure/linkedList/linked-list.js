@@ -69,6 +69,16 @@ class LinkedList {
       return result;
     }
   }
+
+
+  zip(list1,list2) {
+    let list1 = 0;
+    let list2 = 0;
+    if (list1.length === 0) { return list2 };
+    if (list2.length === 0) { return list1 };
+    let list1.head = new Node();
+    list1.head.next = list2.head;
+  }
 }
 
 class moreLinks extends LinkedList {
