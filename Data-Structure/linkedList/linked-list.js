@@ -12,13 +12,28 @@ class LinkedList {
     this.head = null;
   }
 
+  isLongerThan(list) {
+    return (this.length() > list.length() ?
+      true : false);
+  }
+
+  length() {
+    let count = 0;
+    let current = this.head;
+    while (current.next) {
+      count++;
+      current = current.next;
+    }
+    return count;
+  }
+
   append(value) {
-    if(!this.head) {
+    if (!this.head) {
       this.head = new Node(value);
       return;
     }
     let current = this.head;
-    while(current.next) {
+    while (current.next) {
       current = current.next;
     }
     current.next = new Node(value);
@@ -31,7 +46,7 @@ class LinkedList {
 
   includes(value) {
     let current = this.head;
-    while(current) {
+    while (current) {
       if (current.value === value) {
         console.log(true);
       } else {
@@ -45,7 +60,7 @@ class LinkedList {
   toString() {
     let current = this.head;
     let output = '';
-    while(current !== null) {
+    while (current !== null) {
       output += current.value;
       current = current.next;
     } return console.log(output);
@@ -70,30 +85,50 @@ class LinkedList {
     }
   }
 
-
-  zip(list1,list2) {
-    let list1 = 0;
-    let list2 = 0;
-    if (list1.length === 0) { return list2 };
-    if (list2.length === 0) { return list1 };
-    let list1.head = new Node();
-    list1.head.next = list2.head;
+  zipLists(list1, list2) {
+    let longer;
+    let shorter;
+    if (list1.isLongerThan(list2)) {
+      longer = list1;
+      shorter = list2;
+    } else {
+      longer = list2;
+      shorter = list1;
+    }
+  
+    let longerCurrent = longer.head;
+    let shorterCurrent = shorter.head;
+  
+    while (shorterCurrent) {
+      let shorterNext = shorterCurrent.next;
+      let longerNext = longerCurrent.next;
+      longerCurrent.next = shorterCurrent;
+      shorterCurrent.next = longerNext;
+      shorterCurrent = shorterNext;
+      longerCurrent = longerNext;
+    }
+    return longer.head;
   }
+
+  
 }
+
+
+
 
 class moreLinks extends LinkedList {
   append(value) {
     if (this.head === null) {
-      this.head = new Node (value);
+      this.head = new Node(value);
       return;
     }
     let current = this.head
     while (current.value === null) {
-     if (this.head === null) {
-       this.head = new Node (value);
-       current = current.next;
+      if (this.head === null) {
+        this.head = new Node(value);
+        current = current.next;
       }
-      current.next = new Node (value);
+      current.next = new Node(value);
       return value;
     }
   }
