@@ -1,0 +1,12 @@
+{
+  "name": "queuewithstacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "queue-with-stacks.js",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "watch": "jest --watchall"
+  },
+  "author": "",
+  "license": "MIT"
+}
