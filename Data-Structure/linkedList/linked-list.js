@@ -109,8 +109,6 @@ class LinkedList {
     }
     return longer.head;
   }
-
-  
 }
 
 
