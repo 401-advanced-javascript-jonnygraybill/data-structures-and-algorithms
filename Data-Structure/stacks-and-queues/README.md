@@ -8,4 +8,4 @@ Create a class called AnimalShelter which holds only dogs and cats. The shelter 
 For the approach of this challenge, object instances of a dog or cat species are being created, and the specific places of each animal are created/stored so that the entire queue doesn't have to be traversed, saving space and time. 
 
 ## Solution
-![Code Challenge 12 Image]('../assets/fifo-animal-shelter-uml.jpg')
+![Code Challenge 12 Image]('../../assets/fifo-animal-shelter-uml.jpg')
