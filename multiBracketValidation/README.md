@@ -9,4 +9,4 @@ For the approach of this challenge, I ended up creating a class that got exporte
 
 ## Solution
 
-* ![Code Challenge 13 Image](../assets/balanced-brackets-uml.jpg)
+![Code Challenge 13 Image](../assets/balanced-brackets-uml.jpg)
