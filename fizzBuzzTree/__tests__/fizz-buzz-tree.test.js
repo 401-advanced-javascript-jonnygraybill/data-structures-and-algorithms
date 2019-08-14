@@ -6,7 +6,7 @@ const Node = require('../node.js');
 
 describe('Tree Data Structure Tests', () => {
 
-  it('Can do the fizzBuzz', () => {
+  it.skip ('Can do the fizzBuzz', () => {
     tree = new BinaryTree()
     console.log(tree);
   });
