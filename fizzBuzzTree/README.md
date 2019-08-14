@@ -13,4 +13,4 @@ Write a function called FizzBuzzTree which takes a tree as an argument.
 The logic for this function is not terribly complex. All one has to do it traverse through a Binary Tree, and for each value that is reached, determine whether it is divisible by 3, 5, or both, and then change the value to fizz, buzz, or fizzbuzz respectively. 
 
 ## Solution
-![Code Challenge 16: Tree Image]('../assets/fizz-buzz-tree.jpg')
+![Code Challenge 16: Tree Image](../assets/fizz-buzz-tree.jpg)
