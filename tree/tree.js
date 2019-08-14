@@ -1,13 +1,5 @@
 'use strict';
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -88,4 +80,4 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-module.exports =  { BinaryTree, Node };
+module.exports =  BinarySearchTree;
