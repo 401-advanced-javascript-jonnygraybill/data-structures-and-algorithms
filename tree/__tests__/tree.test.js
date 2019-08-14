@@ -15,6 +15,9 @@ let nine = new Node(9);
 let ten = new Node(10);
 let eleven = new Node(11);
 let twelve = new Node(12);
+let thirteen = new Node(13);
+let fourteen = new Node(14);
+let fifteen = new Node(15);
 
 describe('Tree Data Structure Tests', () => {
 
@@ -56,5 +59,19 @@ describe('Tree Data Structure Tests', () => {
     tree.root.right = eleven;
     tree.root.left = four;
     expect(tree.breadthFirst([7, 5, 2, 10, 6, 9, 12, 11, 4]))
+  });
+
+  it('Can return the maximum value of the entire tree', () => {
+    let tree = new BinaryTree();
+    tree.root = seven;
+    tree.root.right = five;
+    tree.root.left = two;
+    tree.root.left = ten;
+    tree.root.right = six;
+    tree.root.right = nine;
+    tree.root.left = twelve;
+    tree.root.right = eleven;
+    tree.root.left = thirteen;
+    expect(tree.findMaximumValue()).toEqual(13);
   });
 });

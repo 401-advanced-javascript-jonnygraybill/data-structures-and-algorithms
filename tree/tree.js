@@ -75,6 +75,36 @@ class BinaryTree {
     };
     return array;
   }
+
+  findMaximumRightValue() {
+    if (this.root === null) {
+      throw "Oof!";
+    }
+    let currentNode = this.root;
+    while (currentNode.right !== null) {
+       currentNode = currentNode.right;
+    }
+    return currentNode.value;
+  }
+
+  findMaximumLeftValue() {
+    if (this.root === null) {
+      throw "Oof!";
+    }
+    let currentNode = this.root;
+    while (currentNode.left !== null) {
+       currentNode = currentNode.left;
+    }
+    return currentNode.value;
+  }
+
+  findMaximumValue() {
+    if (this.findMaximumLeftValue() > this.findMaximumRightValue()) {
+      return this.findMaximumLeftValue();
+    } else {
+      return this.findMaximumRightValue();
+    }
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
