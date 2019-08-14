@@ -1,5 +1,13 @@
 'use strict';
 
+class Node {
+  constructor (val) {
+    this.value = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -49,6 +57,24 @@ class BinaryTree {
     traverse(this.root);
     return storage;
   }
+
+  breadthFirst() {
+    let array = [];
+    let queue = [];
+    queue.push(this.root);
+
+    while(queue.length) {
+      let current = queue.shift();
+      array.push(current.value);
+      if (current.left) {
+        queue.push(current.left)
+      };
+      if (current.right) {
+        queue.push(current.right)
+      };
+    };
+    return array;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -80,4 +106,4 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-module.exports =  BinarySearchTree;
+module.exports =  { BinaryTree, Node };

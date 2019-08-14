@@ -4,9 +4,17 @@ let BinaryTree = require('../tree.js').BinaryTree;
 let Node = require('../tree.js').Node;
 
 let one = new Node(1);
-let seven = new Node(7);
-let five = new Node(5);
+let two = new Node(2);
+let three = new Node(3);
 let four = new Node(4);
+let five = new Node(5);
+let six = new Node(6);
+let seven = new Node(7);
+let eight = new Node(8);
+let nine = new Node(9);
+let ten = new Node(10);
+let eleven = new Node(11);
+let twelve = new Node(12);
 
 describe('Tree Data Structure Tests', () => {
 
@@ -35,4 +43,18 @@ describe('Tree Data Structure Tests', () => {
     tree.root.left = seven;
     expect(tree.root.left.value).toBe(7);
   });
-})
+
+  it('Can return the result of a tree\'s breadth-first traversal', () => {
+    let tree = new BinaryTree();
+    tree.root = seven;
+    tree.root.right = five;
+    tree.root.left = two;
+    tree.root.left = ten;
+    tree.root.right = six;
+    tree.root.right = nine;
+    tree.root.left = twelve;
+    tree.root.right = eleven;
+    tree.root.left = four;
+    expect(tree.breadthFirst([7, 5, 2, 10, 6, 9, 12, 11, 4]))
+  });
+});
