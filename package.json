@@ -20,5 +20,8 @@
   "devDependencies": {
     "jest": "^24.8.0",
     "util": "^0.12.1"
+  },
+  "dependencies": {
+    "super": "^0.2.3"
   }
 }
