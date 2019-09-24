@@ -59,4 +59,4 @@ console.log(hashtable.add('Batman', 'Bruce Wayne'));
 console.log(hashtable.buckets);
 console.log(hashtable.get('Batman'));
 console.log(hashtable.contains('Batman'));
-console.log(hashtable.contains('Joker'))
+console.log(hashtable.contains('Joker'));
