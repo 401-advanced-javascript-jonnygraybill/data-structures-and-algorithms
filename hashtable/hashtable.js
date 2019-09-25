@@ -1,4 +1,7 @@
-function HashTable(length) {
+'use strict';
+
+function HashTable() {
+  length = 1024;
   this.buckets = Array(length);
   this.bucketsLength = this.buckets.length;
 }
@@ -7,6 +10,26 @@ function HashNode(key, val) {
   this.key = key;
   this.val = val;
   this.next = null;
+  this.previous = null;
+}
+
+function LinkedList() {
+  this.head = null;
+  this.tail = null;
+  this.length = 0;
+}
+
+LinkedList.prototype.addToList = function(key, val) {
+  let node = new Node(key, val);
+  if (!this.length) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    this.tail.next = node;
+    node.previous = this.tail;
+    this.tail = node;
+  }
+  this.length++;
 }
 
 HashTable.prototype.hash = function(key) {
@@ -34,7 +57,7 @@ HashTable.prototype.get = function(key) {
     let index = this.hash(key);
     let currentNode = this.buckets[index];
     if (!currentNode) return null;
-    else if (currentNode.key === key) return currentNode.val;
+    else if (currentNode.key === key) return this.buckets[index];
     else {
         while (currentNode.next) {
             if (currentNode.key === key) return currentNode.val;
@@ -54,9 +77,4 @@ HashTable.prototype.contains = function(key) {
   }
 }
 
-let hashtable = new HashTable(1024);
-console.log(hashtable.add('Batman', 'Bruce Wayne'));
-console.log(hashtable.buckets);
-console.log(hashtable.get('Batman'));
-console.log(hashtable.contains('Batman'));
-console.log(hashtable.contains('Joker'));
+module.exports = HashTable;
