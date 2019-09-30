@@ -1,6 +1,6 @@
 'use strict';
 
-function Tree_intersection(firstTree, secondTree) {
+function tree_intersection(firstTree, secondTree) {
   firstTree = firstTree.breadthFirst();
   secondTree = secondTree.breadthFirst();
   let duplicates = [];
@@ -14,4 +14,4 @@ function Tree_intersection(firstTree, secondTree) {
   return duplicates;
 }
 
-module.exports = Tree_intersection;
+module.exports = tree_intersection;
